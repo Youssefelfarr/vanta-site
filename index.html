@@ -23,15 +23,28 @@
         min-height: auto;
         margin-top: 0;
         padding-top: 20px;
-        padding-bottom: 0;
+        padding-bottom: 28px;
+        align-items: center;
+      }
+
+      .hero-copy {
+        display: grid;
+        align-content: center;
+        justify-items: start;
+        min-width: 0;
+        padding-bottom: 18px;
       }
 
       .hero-support {
-        margin: 0 0 32px;
+        margin: 0 0 24px;
         max-width: 32ch;
         color: rgba(245, 245, 241, 0.72);
         line-height: 1.75;
         font-size: 1.02rem;
+      }
+
+      .hero-actions {
+        margin-bottom: 8px;
       }
 
       .statement {
@@ -268,6 +281,14 @@
       }
 
       @media (max-width: 960px) {
+        .hero {
+          padding-bottom: 22px;
+        }
+
+        .hero-copy {
+          padding-bottom: 0;
+        }
+
         .statement {
           grid-template-columns: 1fr;
           gap: 28px;
@@ -334,7 +355,14 @@
               Premium visual content for product brands &mdash; delivered in days.
             </p>
             <div class="hero-actions">
-              <a class="button" href="#contact">Book a Production Call</a>
+              <a
+                class="button"
+                href="https://wa.me/201026939269?text=Hi%20VANTA%20%E2%80%94%20I%E2%80%99d%20like%20to%20discuss%20a%20production%20project%20for%20my%20brand."
+                target="_blank"
+                rel="noreferrer"
+              >
+                Book a Production Call
+              </a>
             </div>
           </div>
         </section>
