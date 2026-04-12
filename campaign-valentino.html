@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valentino Noir — VANTA Campaign</title>
+    <meta name="description" content="Valentino Noir: dark, cinematic storytelling for modern fragrance brands. A campaign by VANTA." />
+    <script>document.documentElement.classList.add("js");</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="campaign.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+
+      <!-- ── Topbar ── -->
+      <header>
+        <div class="topbar">
+          <a class="brand" href="index.html" aria-label="VANTA home">VANTA</a>
+          <nav class="topbar-nav">
+            <span class="campaign-label">Campaign</span>
+            <a class="topbar-back" href="index.html#campaigns">All Campaigns</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+
+        <!-- ── Hero ── -->
+        <section class="campaign-hero">
+          <div class="container">
+            <div class="campaign-hero-copy reveal">
+              <span class="campaign-eyebrow">Fragrance · Cinematic</span>
+              <h1 class="campaign-title">Valentino Noir</h1>
+              <p class="campaign-tagline">Dark, cinematic storytelling for modern fragrance brands. Scent made visible — desire made palpable.</p>
+            </div>
+          </div>
+          <div class="campaign-hero-image reveal">
+            <img
+              src="images/perfume/perfume-hero.jpg"
+              alt="Valentino Noir — hero campaign visual"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </div>
+        </section>
+
+        <!-- ── Visual Grid ── -->
+        <section class="visual-grid-section reveal">
+          <div class="container">
+            <div class="visual-grid visual-grid--3 stagger-children">
+              <div class="vg-item">
+                <img src="images/perfume/perfume-art.jpg" alt="Valentino Noir — art visual" loading="lazy" decoding="async" />
+              </div>
+              <div class="vg-item">
+                <img src="images/perfume/perfume-close.jpg" alt="Valentino Noir — bottle close-up" loading="lazy" decoding="async" />
+              </div>
+              <div class="vg-item">
+                <img src="images/perfume/perfume-detail.jpg" alt="Valentino Noir — detail shot" loading="lazy" decoding="async" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ── Concept ── -->
+        <section class="concept-section reveal">
+          <div class="container">
+            <div class="concept-inner">
+              <p class="concept-label">Creative Direction</p>
+              <div class="concept-body">
+                <h2>Scent has no image. We built one.</h2>
+                <p>Valentino Noir posed the central creative challenge of fragrance storytelling: how do you make invisible seductive? The answer was atmosphere over product — building a visual world so immersive that the bottle becomes almost secondary to the feeling it evokes.</p>
+                <p>The campaign draws from noir cinema and fashion editorial simultaneously. Darkness as texture. Light as meaning. Every frame asks not "what does this smell like?" but "how does this make you feel?" — and then answers with pure, unspoken cinema.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ── Direction ── -->
+        <section class="direction-section reveal">
+          <div class="container">
+            <div class="direction-header">
+              <h2>Campaign Direction</h2>
+              <p>The three pillars that shaped every frame.</p>
+            </div>
+            <div class="direction-grid stagger-children">
+              <div class="direction-card">
+                <p class="direction-card-label">Lighting</p>
+                <h3 class="direction-card-title">High-contrast chiaroscuro. Smoke diffusion.</h3>
+                <p class="direction-card-desc">Deep blacks with a single hard backlight. Atmospheric haze introduced to soften edges and create the sensation of depth dissolving into darkness.</p>
+              </div>
+              <div class="direction-card">
+                <p class="direction-card-label">Styling</p>
+                <h3 class="direction-card-title">Raw glass. Dark marble. Liquid reflection.</h3>
+                <p class="direction-card-desc">The bottle placed in environments that reflect and double — dark mirrored stone, minimal black velvet, wet glass. Surfaces chosen to multiply and distort mystery.</p>
+              </div>
+              <div class="direction-card">
+                <p class="direction-card-label">Mood</p>
+                <h3 class="direction-card-title">Sensory. Nocturnal. Deeply evocative.</h3>
+                <p class="direction-card-desc">This campaign should feel like a memory — one that surfaces at night unexpectedly and is gone before you can name it. Desire rendered in shadow and light.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ── CTA ── -->
+        <section class="campaign-cta-section reveal">
+          <div class="container">
+            <span class="campaign-eyebrow">Start With VANTA</span>
+            <h2>Build your campaign.</h2>
+            <div class="cta-stack">
+              <a class="cta-button" href="index.html#contact">Start Your Campaign</a>
+              <a class="cta-button cta-button-secondary" href="index.html#campaigns">View All Campaigns</a>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <footer class="campaign-footer">
+        <span class="campaign-footer-brand">VANTA</span>
+        <span class="campaign-footer-copy">AI Creative Campaign Studio</span>
+      </footer>
+
+    </div>
+
+    <script>
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add("is-visible");
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.08 });
+
+      document.querySelectorAll(".reveal, .stagger-children").forEach(el => io.observe(el));
+    </script>
+  </body>
+</html>
