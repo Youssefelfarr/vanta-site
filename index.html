@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VANTA | Visual Production Studio</title>
+    <meta
+      name="description"
+      content="VANTA produces premium, campaign-ready visuals for product brands that need speed, quality, and delivery."
+    />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .hero {
+        min-height: auto;
+        margin-top: 0;
+        padding-top: 20px;
+        padding-bottom: 0;
+      }
+
+      .hero-support {
+        margin: 0 0 32px;
+        max-width: 32ch;
+        color: rgba(245, 245, 241, 0.72);
+        line-height: 1.75;
+        font-size: 1.02rem;
+      }
+
+      .statement {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 40px;
+        align-items: center;
+        padding-top: 72px;
+        padding-bottom: 72px;
+      }
+
+      .statement-copy {
+        max-width: 26rem;
+      }
+
+      .statement-media {
+        min-width: 0;
+      }
+
+      .statement-video-frame {
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 24px;
+        background: #070707;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+      }
+
+      .statement-video {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        background: #070707;
+      }
+
+      .campaign-trust-signal {
+        margin: 56px auto 0;
+        display: grid;
+        gap: 18px;
+        justify-items: center;
+        text-align: center;
+      }
+
+      .campaign-trust-title {
+        margin: 0;
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+        color: #f5f5f1;
+      }
+
+      .campaign-trust-subtitle {
+        margin: 0;
+        max-width: 34ch;
+        color: rgba(245, 245, 241, 0.68);
+        font-size: 1rem;
+        line-height: 1.7;
+      }
+
+      .campaign-trust-points {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+        width: 100%;
+        max-width: 760px;
+        margin: 14px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .campaign-trust-points li {
+        display: grid;
+        gap: 12px;
+        align-content: start;
+        text-align: left;
+        padding: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 24px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+        transition:
+          transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
+          color 260ms ease,
+          text-shadow 260ms ease,
+          box-shadow 260ms ease,
+          border-color 260ms ease,
+          background 260ms ease;
+      }
+
+      .campaign-trust-points li:hover,
+      .campaign-trust-points li:focus-visible {
+        transform: translateY(-5px) scale(1.012);
+        border-color: rgba(255, 255, 255, 0.16);
+        box-shadow:
+          0 20px 44px rgba(0, 0, 0, 0.34),
+          0 0 0 1px rgba(255, 255, 255, 0.04),
+          0 0 34px rgba(214, 209, 196, 0.05);
+        background: linear-gradient(180deg, rgba(20, 20, 20, 0.96), rgba(255, 255, 255, 0.03));
+      }
+
+      .campaign-trust-value {
+        margin: 0;
+        font-size: 2rem;
+        line-height: 1;
+        letter-spacing: -0.04em;
+        color: #f5f5f1;
+      }
+
+      .campaign-trust-copy {
+        margin: 0;
+        color: rgba(245, 245, 241, 0.72);
+        font-size: 0.98rem;
+        line-height: 1.55;
+      }
+
+      .what-we-build {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      .what-we-build::before {
+        display: none;
+      }
+
+      @media (max-width: 960px) {
+        .statement {
+          grid-template-columns: 1fr;
+          gap: 28px;
+          padding-top: 56px;
+          padding-bottom: 56px;
+        }
+
+        .statement-copy {
+          max-width: none;
+        }
+
+        .campaign-trust-points {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="#hero" aria-label="VANTA home">VANTA</a>
+        <nav class="nav">
+          <a href="#build">Services</a>
+          <a href="#campaigns">Campaigns</a>
+          <a href="#why">Philosophy</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero section" id="hero">
+          <div class="hero-media hero-mark-panel">
+            <img
+              src="images/branding/vanta-hero-vertical.jpg"
+              alt="VANTA hero campaign visual"
+              class="hero-mark-image"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </div>
+          <div class="hero-copy">
+            <p class="eyebrow">Visual Production Studio</p>
+            <h1>We don't create content. We build campaigns.</h1>
+            <p class="hero-support">
+              Premium visual content for product brands &mdash; delivered in days.
+            </p>
+            <div class="hero-actions">
+              <a class="button" href="#contact">Book a Production Call</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="statement section reveal">
+          <div class="statement-copy">
+            <p>Most brands post products. We produce visuals that sell them.</p>
+          </div>
+          <div class="statement-media">
+            <div class="statement-video-frame">
+              <video
+                class="statement-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              >
+                <source src="assets/videos/statement-signature-video.mp4.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </section>
+
+        <section class="section reveal what-we-build what-we-do-section" id="build" aria-label="What We Build">
+          <div class="section-heading what-we-build-heading what-we-do-heading">
+            <p class="eyebrow">The Offer</p>
+            <h2>What We Build</h2>
+            <p class="section-subtitle">
+              We deliver complete visual systems<br />
+              from concept to campaign-ready assets.
+            </p>
+          </div>
+          <div class="what-we-build-grid">
+            <article class="info-card what-we-build-card what-we-do-card">
+              <h3>Visual Production</h3>
+              <p>
+                High-end product visuals, videos, and campaign assets crafted for
+                launches, ads, and social.
+              </p>
+            </article>
+            <article class="info-card what-we-build-card what-we-do-card">
+              <h3>Campaign Systems</h3>
+              <p>
+                Structured visual outputs designed to give brands a consistent
+                campaign presence across touchpoints.
+              </p>
+            </article>
+            <article class="info-card what-we-build-card what-we-do-card">
+              <h3>Campaign-Ready Delivery</h3>
+              <p>
+                Assets prepared for launches, paid ads, social rollout, and
+                brand use &mdash; without implying media buying or ad
+                management.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section reveal" id="why">
+          <div class="section-heading">
+            <p class="eyebrow">Why VANTA</p>
+            <h2>Why VANTA</h2>
+          </div>
+          <div class="why-grid">
+            <article class="why-card">
+              <h3>Fast production, no delays.</h3>
+              <p>We deliver high-end visuals in days, not weeks, without compromising quality.</p>
+            </article>
+            <article class="why-card">
+              <h3>Built to look expensive.</h3>
+              <p>Every visual is crafted to meet premium brand standards in lighting, texture, and composition.</p>
+            </article>
+            <article class="why-card">
+              <h3>Scalable output.</h3>
+              <p>Full visual sets ready for ads, social, and campaigns, not one-off posts.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section reveal campaign-worlds-section" id="campaigns" aria-label="Campaign Worlds">
+          <div class="section-heading campaign-worlds-heading">
+            <p class="eyebrow">Campaign Worlds</p>
+            <h2>Recent Production</h2>
+            <p class="section-subtitle">
+              A selection of campaign-ready visuals produced for modern product brands.
+            </p>
+          </div>
+          <div class="campaign-grid campaign-worlds-grid">
+            <a href="campaign-velvet.html" class="campaign-card campaign-world-card" aria-label="View Velvet Hour campaign">
+              <img
+                src="images/offcenter-hero.jpg"
+                alt="Velvet Hour fashion campaign"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="campaign-overlay">
+                <p class="campaign-tag">Fashion</p>
+                <h3>Velvet Hour</h3>
+                <p class="campaign-world-copy">Fashion visuals delivered for launches, lookbooks, and paid campaigns.</p>
+                <p class="campaign-link">View Campaign &rarr;</p>
+              </div>
+            </a>
+            <a href="campaign-emerald.html" class="campaign-card campaign-world-card" aria-label="View Emerald Diamond campaign">
+              <img
+                src="images/jewelry/jewelry-hero.jpg"
+                alt="Emerald Diamond jewelry campaign"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="campaign-overlay">
+                <p class="campaign-tag">Jewelry</p>
+                <h3>Emerald Diamond</h3>
+                <p class="campaign-world-copy">Jewelry visuals built for premium positioning, launch assets, and ads.</p>
+                <p class="campaign-link">View Campaign &rarr;</p>
+              </div>
+            </a>
+            <a href="campaign-valentino.html" class="campaign-card campaign-world-card" aria-label="View Valentino Noir campaign">
+              <img
+                src="images/perfume/perfume-hero.jpg"
+                alt="Valentino Noir perfume campaign"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="campaign-overlay">
+                <p class="campaign-tag">Fragrance</p>
+                <h3>Valentino Noir</h3>
+                <p class="campaign-world-copy">Fragrance visuals produced for premium launches, ads, and campaign rollout.</p>
+                <p class="campaign-link">View Campaign &rarr;</p>
+              </div>
+            </a>
+          </div>
+          <div class="campaign-trust-signal" aria-label="Production trust signals">
+            <h3 class="campaign-trust-title">Proof of Delivery</h3>
+            <p class="campaign-trust-subtitle">
+              Across fashion, jewelry, and product brands.
+            </p>
+            <ul class="campaign-trust-points">
+              <li>
+                <p class="campaign-trust-value">+150</p>
+                <p class="campaign-trust-copy">Visuals Produced</p>
+              </li>
+              <li>
+                <p class="campaign-trust-value">+20</p>
+                <p class="campaign-trust-copy">Campaigns Executed</p>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section cta-section reveal" id="contact">
+          <p class="eyebrow">Your campaign starts here</p>
+          <h2>Send Us Your Product</h2>
+          <a class="button button-secondary" href="https://wa.me/201026939269" target="_blank" rel="noreferrer">
+            Start on WhatsApp
+          </a>
+          <p style="margin:18px auto 0;font-size:0.82rem;color:rgba(245,245,241,0.46);letter-spacing:0.04em;">We'll reply with a production plan and pricing.</p>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-brand">
+          <p class="footer-name">VANTA</p>
+          <p class="footer-studio">Visual Production Studio</p>
+        </div>
+        <div class="footer-contact">
+          <p class="footer-label">Contact</p>
+          <a href="https://wa.me/201026939269" target="_blank" rel="noreferrer">WhatsApp: +201026939269</a>
+          <a href="https://instagram.com/" target="_blank" rel="noreferrer">Instagram: @...</a>
+        </div>
+        <p class="footer-note">Built for premium product brands. &nbsp;&middot;&nbsp; &copy; 2026 VANTA</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
