@@ -147,6 +147,117 @@
         line-height: 1.55;
       }
 
+      .faq-section {
+        display: grid;
+        gap: 28px;
+      }
+
+      .faq-heading {
+        display: grid;
+        gap: 14px;
+        justify-items: center;
+        text-align: center;
+      }
+
+      .faq-title {
+        margin: 0;
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+        color: #f5f5f1;
+      }
+
+      .faq-list {
+        display: grid;
+        gap: 16px;
+        max-width: 860px;
+        margin: 0 auto;
+      }
+
+      .faq-item {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 24px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+        overflow: hidden;
+        transition:
+          transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 260ms ease,
+          border-color 260ms ease,
+          background 260ms ease;
+      }
+
+      .faq-item:hover,
+      .faq-item:focus-within {
+        transform: translateY(-4px) scale(1.008);
+        border-color: rgba(255, 255, 255, 0.16);
+        box-shadow:
+          0 20px 44px rgba(0, 0, 0, 0.34),
+          0 0 0 1px rgba(255, 255, 255, 0.04),
+          0 0 34px rgba(214, 209, 196, 0.05);
+        background: linear-gradient(180deg, rgba(20, 20, 20, 0.96), rgba(255, 255, 255, 0.03));
+      }
+
+      .faq-question {
+        position: relative;
+        list-style: none;
+        cursor: pointer;
+        padding: 24px 72px 24px 28px;
+        color: #f5f5f1;
+        font-size: 1.08rem;
+        font-weight: 600;
+        line-height: 1.35;
+      }
+
+      .faq-question::-webkit-details-marker {
+        display: none;
+      }
+
+      .faq-question::after {
+        content: "+";
+        position: absolute;
+        top: 50%;
+        right: 28px;
+        transform: translateY(-50%);
+        color: rgba(245, 245, 241, 0.48);
+        font-size: 1.4rem;
+        font-weight: 500;
+        transition: transform 220ms ease, color 220ms ease;
+      }
+
+      .faq-item[open] .faq-question::after {
+        transform: translateY(-50%) rotate(45deg);
+        color: rgba(245, 245, 241, 0.82);
+      }
+
+      .faq-answer {
+        display: grid;
+        gap: 12px;
+        padding: 0 28px 24px;
+      }
+
+      .faq-answer p {
+        margin: 0;
+        color: rgba(245, 245, 241, 0.72);
+        font-size: 0.98rem;
+        line-height: 1.75;
+      }
+
+      .faq-hook-section {
+        padding-top: 28px;
+        padding-bottom: 20px;
+        text-align: center;
+      }
+
+      .faq-hook {
+        margin: 0 auto;
+        max-width: 22ch;
+        color: #f5f5f1;
+        font-size: clamp(1.45rem, 3vw, 2.2rem);
+        line-height: 1.2;
+        letter-spacing: -0.03em;
+      }
+
       .what-we-build {
         margin-top: 0;
         margin-bottom: 0;
@@ -171,6 +282,24 @@
         .campaign-trust-points {
           grid-template-columns: 1fr;
           gap: 16px;
+        }
+
+        .faq-question {
+          padding: 22px 62px 22px 22px;
+          font-size: 1rem;
+        }
+
+        .faq-question::after {
+          right: 22px;
+        }
+
+        .faq-answer {
+          padding: 0 22px 22px;
+        }
+
+        .faq-hook-section {
+          padding-top: 20px;
+          padding-bottom: 12px;
         }
       }
     </style>
@@ -354,6 +483,56 @@
               </li>
             </ul>
           </div>
+        </section>
+
+        <section class="section faq-section reveal" aria-label="Frequently Asked Questions">
+          <div class="faq-heading">
+            <p class="eyebrow">Questions</p>
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+          </div>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary class="faq-question">How much does a project cost?</summary>
+              <div class="faq-answer">
+                <p>Projects typically start from 15,000 EGP, depending on the scope, number of assets, and campaign requirements.</p>
+                <p>We&rsquo;ll send a clear production plan and pricing after understanding your product.</p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-question">How fast can you deliver?</summary>
+              <div class="faq-answer">
+                <p>Most projects are delivered within a few days.</p>
+                <p>Exact timelines depend on the scope, but we prioritize speed without compromising quality.</p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-question">What exactly do you deliver?</summary>
+              <div class="faq-answer">
+                <p>We deliver campaign-ready visuals &mdash; including hero shots, product details, and formats optimized for ads and social.</p>
+                <p>Everything is structured to be used directly across your campaigns.</p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-question">Are these visuals created using AI?</summary>
+              <div class="faq-answer">
+                <p>We use advanced AI-assisted production combined with art direction to create high-end visuals.</p>
+                <p>What matters is the result &mdash; premium visuals ready to perform in real campaigns.</p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-question">What happens after I contact you?</summary>
+              <div class="faq-answer">
+                <p>We&rsquo;ll review your product, define the visual direction, and send you a production plan with pricing.</p>
+                <p>Once approved, we start production immediately.</p>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section class="faq-hook-section reveal" aria-label="Conversion hook">
+          <p class="faq-hook">
+            If your product is ready, we&rsquo;ll turn it into a campaign-ready visual system.
+          </p>
         </section>
 
         <section class="section cta-section reveal" id="contact">
