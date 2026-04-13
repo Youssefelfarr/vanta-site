@@ -291,22 +291,39 @@ a {
 
 .section-heading {
   display: grid;
-  gap: var(--section-gap);
-  margin-bottom: 28px;
+  gap: 8px;
+  margin-bottom: 48px;
 }
 
 .section-heading h2,
 .cta-section h2 {
-  max-width: 11ch;
-  font-size: var(--section-title-size);
+  max-width: 14ch;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  margin-top: 4px;
 }
 
 .section-subtitle {
   margin: 0;
-  max-width: 34ch;
+  max-width: 38ch;
   color: var(--muted);
-  line-height: var(--body-line-height);
-  font-size: var(--body-size);
+  line-height: 1.45;
+  font-size: 1.05rem;
+  opacity: 0.75;
+}
+
+.what-we-build-heading,
+.what-we-do-heading,
+.campaign-worlds-heading {
+  justify-items: center;
+  text-align: center;
+}
+
+.what-we-build-heading .section-subtitle,
+.what-we-do-heading .section-subtitle,
+.campaign-worlds-heading .section-subtitle {
+  margin: 0 auto;
 }
 
 .gallery-section {
@@ -576,21 +593,7 @@ a {
 }
 
 .campaign-worlds-heading {
-  justify-items: center;
-  text-align: center;
-  margin-bottom: 56px;
-}
-
-.campaign-worlds-heading h2 {
-  max-width: 9ch;
-}
-
-.campaign-worlds-heading .section-subtitle {
-  max-width: 40ch;
-  opacity: 0.7;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 1.05rem;
+  margin-bottom: 48px;
 }
 
 .what-we-do-section {
@@ -614,35 +617,13 @@ a {
   margin-bottom: 80px;
 }
 
-.what-we-do-heading {
-  justify-items: center;
-  text-align: center;
-}
-
 .what-we-build-heading {
   margin-bottom: 0;
 }
 
 .what-we-build-heading h2 {
-  font-size: 48px;
-  font-weight: 600;
   max-width: none;
   white-space: nowrap;
-}
-
-.what-we-build-heading .section-subtitle {
-  font-size: 18px;
-  opacity: 0.7;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.what-we-do-heading h2 {
-  max-width: 8ch;
-}
-
-.what-we-do-heading .section-subtitle {
-  max-width: 38ch;
 }
 
 .what-we-do-grid {
