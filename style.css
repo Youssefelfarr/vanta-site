@@ -812,18 +812,17 @@ a {
 
 .campaign-world-card:hover,
 .campaign-world-card:focus-visible {
-  transform: scale(1.028);
-  border-color: rgba(255, 255, 255, 0.2);
+  transform: none;
+  border-color: rgba(255, 255, 255, 0.14);
   box-shadow:
-    0 32px 72px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(255, 255, 255, 0.06),
-    0 0 56px rgba(214, 209, 196, 0.07);
+    0 16px 40px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
   outline: none;
 }
 
 .campaign-world-card:hover img,
 .campaign-world-card:focus-visible img {
-  transform: scale(1.04);
+  transform: scale(1.018);
 }
 
 .campaign-world-card:hover::before,
@@ -856,6 +855,8 @@ a {
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.1;
+  opacity: 0.85;
+  transition: opacity 400ms ease;
 }
 
 .campaign-world-copy {
@@ -864,6 +865,18 @@ a {
   font-size: 0.96rem;
   line-height: 1.5;
   color: rgba(245, 245, 241, 0.72);
+  opacity: 0.75;
+  transition: opacity 400ms ease;
+}
+
+.campaign-world-card:hover .campaign-overlay h3,
+.campaign-world-card:focus-within .campaign-overlay h3 {
+  opacity: 1;
+}
+
+.campaign-world-card:hover .campaign-world-copy,
+.campaign-world-card:focus-within .campaign-world-copy {
+  opacity: 1;
 }
 
 .campaign-link {
