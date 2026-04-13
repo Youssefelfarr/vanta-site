@@ -10,6 +10,12 @@
     />
     <script>
       document.documentElement.classList.add("js");
+      try {
+        if (sessionStorage.getItem("vantaIntroPlayed")) {
+          document.documentElement.classList.add("intro-skipped");
+          document.documentElement.classList.add("intro-finished");
+        }
+      } catch (e) {}
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -390,6 +396,10 @@
     </style>
   </head>
   <body>
+    <div id="vanta-intro" class="vanta-intro">
+      <div class="vanta-intro-text">VANTA</div>
+    </div>
+    
     <div class="site-shell">
       <header class="topbar">
         <a class="brand" href="#hero" aria-label="VANTA home">VANTA</a>

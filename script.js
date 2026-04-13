@@ -32,3 +32,28 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     target.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 });
+
+/* Cinematic Intro Logic */
+document.addEventListener("DOMContentLoaded", () => {
+  const intro = document.getElementById("vanta-intro");
+  if (!intro) return;
+
+  // We check the explicit inline class fallback to be safely redundant
+  if (document.documentElement.classList.contains("intro-skipped")) {
+    intro.style.display = "none";
+    return;
+  }
+
+  // Sequencer
+  setTimeout(() => {
+    intro.classList.add("fade-out");
+    document.documentElement.classList.add("intro-finished"); // Unlocks hero animations synchronously
+    
+    setTimeout(() => {
+      intro.style.display = "none";
+      try {
+        sessionStorage.setItem("vantaIntroPlayed", "true");
+      } catch (e) {}
+    }, 600); // 600ms matches the CSS transition window
+  }, 1200); // 1.2s total holding parameter
+});
