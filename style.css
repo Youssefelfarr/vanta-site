@@ -794,38 +794,37 @@ a {
   background: #090909;
   border-radius: 16px;
   cursor: pointer;
-  transition:
-    border-color 200ms ease-out,
-    box-shadow 200ms ease-out;
+  transition: border-color 0s, box-shadow 0s;
 }
 
 .campaign-world-card img {
-  transition: transform 250ms ease-out;
+  transition: transform 50ms linear;
 }
 
 .campaign-world-card::before {
   background: linear-gradient(180deg, transparent 18%, rgba(0, 0, 0, 0.82) 100%);
   opacity: 0.74;
-  transition: opacity 200ms ease-out, background 200ms ease-out;
+  transition: opacity 50ms linear, background 50ms linear;
 }
 
 .campaign-world-card:hover,
 .campaign-world-card:focus-visible {
   transform: none;
-  border-color: rgba(255, 255, 255, 0.14);
-  box-shadow:
-    0 16px 40px rgba(0, 0, 0, 0.45),
-    0 0 0 1px rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: none;
+  transition: border-color 250ms ease-out;
   outline: none;
 }
 
 .campaign-world-card:hover img,
 .campaign-world-card:focus-visible img {
-  transform: scale(1.018);
+  transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
+  transform: scale(1.02);
 }
 
 .campaign-world-card:hover::before,
 .campaign-world-card:focus-visible::before {
+  transition: opacity 300ms ease-out, background 300ms ease-out;
   opacity: 0.9;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.04) 8%, rgba(0, 0, 0, 0.92) 100%);
 }
@@ -855,7 +854,7 @@ a {
   font-weight: 600;
   line-height: 1.1;
   opacity: 0.85;
-  transition: opacity 200ms ease-out;
+  transition: opacity 50ms linear;
 }
 
 .campaign-world-copy {
@@ -865,17 +864,19 @@ a {
   line-height: 1.5;
   color: rgba(245, 245, 241, 0.72);
   opacity: 0.75;
-  transition: opacity 200ms ease-out;
+  transition: opacity 50ms linear;
 }
 
 .campaign-world-card:hover .campaign-overlay h3,
 .campaign-world-card:focus-within .campaign-overlay h3 {
   opacity: 1;
+  transition: opacity 250ms ease-out;
 }
 
 .campaign-world-card:hover .campaign-world-copy,
 .campaign-world-card:focus-within .campaign-world-copy {
   opacity: 1;
+  transition: opacity 250ms ease-out;
 }
 
 .campaign-link {
