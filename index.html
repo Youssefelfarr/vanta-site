@@ -271,6 +271,65 @@
         letter-spacing: -0.03em;
       }
 
+      .how-it-works-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+            counter-reset: step;
+          }
+
+          .how-it-works-step {
+            position: relative;
+            padding: 32px 28px 28px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+            display: grid;
+            gap: 14px;
+            align-content: start;
+            transition:
+              transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 260ms ease,
+              border-color 260ms ease,
+              background 260ms ease;
+            counter-increment: step;
+          }
+
+          .how-it-works-step::before {
+            content: "0" counter(step);
+            font-size: 0.7rem;
+            letter-spacing: 0.18em;
+            color: rgba(245, 245, 241, 0.32);
+            font-weight: 600;
+          }
+
+          .how-it-works-step:hover {
+            transform: translateY(-5px) scale(1.012);
+            border-color: rgba(255, 255, 255, 0.16);
+            box-shadow:
+              0 20px 44px rgba(0, 0, 0, 0.34),
+              0 0 0 1px rgba(255, 255, 255, 0.04),
+              0 0 34px rgba(214, 209, 196, 0.05);
+            background: linear-gradient(180deg, rgba(20, 20, 20, 0.96), rgba(255, 255, 255, 0.03));
+          }
+
+          .how-it-works-step h3 {
+            margin: 0;
+            font-size: 1.12rem;
+            font-weight: 600;
+            color: #f5f5f1;
+            line-height: 1.25;
+            letter-spacing: -0.01em;
+          }
+
+          .how-it-works-step p {
+            margin: 0;
+            font-size: 0.94rem;
+            color: rgba(245, 245, 241, 0.68);
+            line-height: 1.7;
+        }
+
       .what-we-build {
         margin-top: 0;
         margin-bottom: 0;
@@ -318,6 +377,11 @@
           padding: 0 22px 22px;
         }
 
+        .how-it-works-grid {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+
         .faq-hook-section {
           padding-top: 20px;
           padding-bottom: 12px;
@@ -332,7 +396,7 @@
         <nav class="nav">
           <a href="#build">Services</a>
           <a href="#campaigns">Campaigns</a>
-          <a href="#why">Philosophy</a>
+          <a href="#why">Why Us</a>
           <a href="#contact">Contact</a>
         </nav>
       </header>
@@ -350,18 +414,18 @@
           </div>
           <div class="hero-copy">
             <p class="eyebrow">Visual Production Studio</p>
-            <h1>We don't create content. We build campaigns.</h1>
+            <h1>We build AI-powered campaigns that look like million-dollar productions &mdash; delivered in days.</h1>
             <p class="hero-support">
-              Premium visual content for product brands &mdash; delivered in days.
+              For fashion, product, and lifestyle brands that want to dominate visually.
             </p>
             <div class="hero-actions">
               <a
                 class="button"
-                href="https://wa.me/201026939269?text=Hi%20VANTA%20%E2%80%94%20I%E2%80%99d%20like%20to%20discuss%20a%20production%20project%20for%20my%20brand."
+                href="https://wa.me/201026939269?text=Hi%2C%20I%20want%20to%20see%20how%20my%20brand%20would%20look%20as%20a%20high-end%20AI%20campaign."
                 target="_blank"
                 rel="noreferrer"
               >
-                Book a Production Call
+                See Your Brand as a Campaign
               </a>
             </div>
           </div>
@@ -393,7 +457,7 @@
             <p class="eyebrow">The Offer</p>
             <h2>What We Build</h2>
             <p class="section-subtitle">
-              We deliver complete visual systems<br />
+              We deliver complete visual systems
               from concept to campaign-ready assets.
             </p>
           </div>
@@ -424,22 +488,43 @@
 
         <section class="section reveal" id="why">
           <div class="section-heading">
-            <p class="eyebrow">Why VANTA</p>
+            <p class="eyebrow">Our Advantage</p>
             <h2>Why VANTA</h2>
           </div>
           <div class="why-grid">
             <article class="why-card">
-              <h3>Fast production, no delays.</h3>
-              <p>We deliver high-end visuals in days, not weeks, without compromising quality.</p>
+              <h3>Launch-ready visuals in days.</h3>
+              <p>We move faster than traditional production without sacrificing premium quality.</p>
             </article>
             <article class="why-card">
-              <h3>Built to look expensive.</h3>
-              <p>Every visual is crafted to meet premium brand standards in lighting, texture, and composition.</p>
+              <h3>Designed to compete at the top.</h3>
+              <p>Every visual is crafted to match the standard of high-end global campaigns.</p>
             </article>
             <article class="why-card">
-              <h3>Scalable output.</h3>
-              <p>Full visual sets ready for ads, social, and campaigns, not one-off posts.</p>
+              <h3>Campaign systems, not random content.</h3>
+              <p>We build scalable visual worlds for ads, launches, and brand growth.</p>
             </article>
+          </div>
+        </section>
+
+        <section class="section reveal" id="process" aria-label="How It Works">
+          <div class="section-heading" style="justify-items:center;text-align:center;margin-bottom:36px;">
+            <p class="eyebrow">The Process</p>
+            <h2>How It Works</h2>
+          </div>
+          <div class="how-it-works-grid">
+            <div class="how-it-works-step">
+              <h3>Strategy</h3>
+              <p>We review your product, define the visual direction, and align on what the campaign needs to do.</p>
+            </div>
+            <div class="how-it-works-step">
+              <h3>AI Production</h3>
+              <p>We produce hero shots, detail frames, and campaign assets — crafted to premium brand standards.</p>
+            </div>
+            <div class="how-it-works-step">
+              <h3>Delivery</h3>
+              <p>You receive a complete, campaign-ready visual library — sized and formatted for ads, social, and launches.</p>
+            </div>
           </div>
         </section>
 
@@ -563,14 +648,21 @@
           </p>
         </section>
 
+        <section class="faq-hook-section reveal" aria-label="Value contrast" style="padding-top:0;padding-bottom:36px;">
+          <p style="margin:0 auto;max-width:44ch;text-align:center;font-size:clamp(0.92rem,1.8vw,1.08rem);color:rgba(245,245,241,0.52);line-height:1.8;letter-spacing:0.01em;">
+            Most brands spend heavily on production time and coordination.<br />
+            We build campaign-ready visuals faster, leaner, and with premium output.
+          </p>
+        </section>
+
         <section class="section cta-section reveal" id="contact">
           <p class="eyebrow">Your campaign starts here</p>
-          <h2>Send Us Your Product</h2>
+          <h2>Turn Your Product Into a Campaign</h2>
+          <p style="margin:0 auto 28px;max-width:38ch;font-size:1rem;color:rgba(245,245,241,0.62);line-height:1.7;text-align:center;">Send us your product, brand, or idea &mdash; we&rsquo;ll build the visual system around it.</p>
           <a class="button button-secondary" href="https://wa.me/201026939269" target="_blank" rel="noreferrer">
             Start on WhatsApp
           </a>
-          <p style="margin:18px auto 0;font-size:0.82rem;color:rgba(245,245,241,0.46);letter-spacing:0.04em;">We'll reply with a production plan and pricing.</p>
-          <p style="margin:10px auto 0;font-size:0.76rem;color:rgba(245,245,241,0.38);letter-spacing:0.03em;">Projects typically start from 15,000 EGP</p>
+          <p style="margin:18px auto 0;font-size:0.82rem;color:rgba(245,245,241,0.46);letter-spacing:0.04em;">We&rsquo;ll reply with a tailored production plan based on your brand.</p>
         </section>
       </main>
 
