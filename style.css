@@ -175,7 +175,7 @@ a {
 }
 
 .hero-copy h1 {
-  max-width: 16ch;
+  max-width: 480px;
   font-size: clamp(2.6rem, 6.5vw, 5.2rem);
   line-height: 0.98;
   margin-bottom: 38px;
