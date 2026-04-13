@@ -241,13 +241,14 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 54px;
-  padding: 0 28px;
+  min-height: 52px;
+  padding: 0 32px;
   border: 1px solid var(--line);
   border-radius: 999px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
   color: var(--text);
-  font-weight: 600;
+  font-weight: 500;
+  letter-spacing: 0.02em;
   transition: transform 220ms ease, border-color 220ms ease, background 220ms ease;
 }
 
@@ -741,7 +742,7 @@ a {
 
 .campaign-card {
   position: relative;
-  min-height: 420px;
+  min-height: 480px;
   border-radius: var(--media-radius);
   overflow: hidden;
 }
@@ -790,7 +791,6 @@ a {
 
 .campaign-world-card {
   display: block;
-  min-height: 500px;
   background: #090909;
   border-radius: 16px;
   cursor: pointer;
@@ -1206,8 +1206,13 @@ a {
     padding-bottom: 72px;
   }
 
-  .campaign-card {
-    min-height: 320px;
+  .campaign-card,
+  .campaign-world-card {
+    min-height: 380px;
+  }
+
+  .hero-copy h1 br {
+    display: none;
   }
 }
 
