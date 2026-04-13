@@ -917,7 +917,7 @@ a {
 }
 
 .cta-section h2 {
-  max-width: 12ch;
+  max-width: none;
   margin: 0 auto 28px;
 }
 
