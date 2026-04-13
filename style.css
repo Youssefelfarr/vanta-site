@@ -101,8 +101,10 @@ a {
   font-size: 0.72rem;
 }
 
-.section {
+.section,
+.faq-hook-section {
   padding: var(--section-padding) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .hero {
@@ -276,8 +278,7 @@ a {
 }
 
 .statement {
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  /* unified section dividers handled globally */
 }
 
 .statement p {
@@ -608,14 +609,7 @@ a {
   margin-bottom: 160px;
 }
 
-.what-we-build::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.06);
-  margin-bottom: 80px;
-}
+
 
 .what-we-build-heading {
   margin-bottom: 0;
@@ -914,6 +908,7 @@ a {
   text-align: center;
   border-radius: var(--media-radius);
   padding: 72px 28px;
+  border-bottom: none; /* Removed so it perfectly abuts the footer border-top */
 }
 
 .cta-section h2 {
