@@ -1210,7 +1210,7 @@ html:not(.intro-finished):not(.intro-skipped) .hero-mark-image {
   display: flex;
   align-items: center;
   justify-content: center;
-  pointer-events: none;
+  cursor: pointer;
   opacity: 1;
 }
 
@@ -1225,50 +1225,31 @@ html.intro-skipped .vanta-intro {
   font-weight: 500;
   color: #fff;
   opacity: 0;
-  transform: scale(0.97);
   filter: blur(12px);
-  animation: introTextReveal 1300ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation: introTextReveal 1000ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
-.vanta-intro-text::after {
-  content: "";
-  position: absolute;
-  inset: -100px;
-  background: radial-gradient(circle at center, rgba(187, 176, 151, 0.08) 0%, transparent 60%);
-  pointer-events: none;
-  z-index: -1;
-  opacity: 0;
-  animation: introBloomReveal 1200ms ease forwards;
-  animation-delay: 200ms;
-}
+
 
 .vanta-intro.fade-out {
   opacity: 0;
-  transition: opacity 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: none;
 }
 
 @keyframes introTextReveal {
   0% {
     opacity: 0;
-    transform: scale(0.96);
     filter: blur(14px);
   }
   30% {
     opacity: 1;
-    transform: scale(1);
     filter: blur(3px);
   }
   100% {
     opacity: 1;
-    transform: scale(1.025);
     filter: blur(0);
   }
-}
-
-@keyframes introBloomReveal {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -44,8 +44,17 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // Sequencer
-  setTimeout(() => {
+  let introCompleted = false;
+  let sequencerTimeout;
+  let removalTimeout;
+
+  const dismissIntro = () => {
+    if (introCompleted) return;
+    introCompleted = true;
+    
+    clearTimeout(sequencerTimeout);
+    clearTimeout(removalTimeout);
+
     intro.classList.add("fade-out");
     document.documentElement.classList.add("intro-finished"); // Unlocks hero animations synchronously
     
@@ -54,6 +63,13 @@ document.addEventListener("DOMContentLoaded", () => {
       try {
         sessionStorage.setItem("vantaIntroPlayed", "true");
       } catch (e) {}
-    }, 600); // 600ms matches the CSS transition window
-  }, 1200); // 1.2s total holding parameter
+    }, 500); // 500ms matches the CSS transition window
+  };
+
+  // Instant skip logic
+  intro.addEventListener("click", dismissIntro);
+  intro.addEventListener("touchstart", dismissIntro, { passive: true });
+
+  // Baseline sequencer (800ms wait + 500ms fade = 1.3s total)
+  sequencerTimeout = setTimeout(dismissIntro, 800);
 });
