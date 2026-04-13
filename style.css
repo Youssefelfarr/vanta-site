@@ -177,8 +177,13 @@ a {
 .hero-copy h1 {
   max-width: 480px;
   font-size: clamp(2.6rem, 6.5vw, 5.2rem);
-  line-height: 0.98;
+  line-height: 1.05;
+  letter-spacing: -0.05em;
   margin-bottom: 38px;
+}
+
+.nowrap {
+  white-space: nowrap;
 }
 
 .hero-actions {
