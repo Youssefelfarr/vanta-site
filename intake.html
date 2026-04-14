@@ -26,6 +26,12 @@
         --muted: rgba(245, 245, 241, 0.68);
         --muted-soft: rgba(245, 245, 241, 0.44);
         --accent: #d6d1c4;
+        --gold-text: #23190c;
+        --gold-border: rgba(188, 162, 111, 0.72);
+        --gold-top: #c6b08a;
+        --gold-bottom: #9f8456;
+        --gold-top-hover: #cfbb98;
+        --gold-bottom-hover: #a98d5f;
         --success-bg: rgba(214, 209, 196, 0.08);
         --success-line: rgba(214, 209, 196, 0.18);
         --shadow: 0 36px 90px rgba(0, 0, 0, 0.42);
@@ -190,12 +196,28 @@
 
       h1 {
         margin: 0;
-        max-width: 6.3ch;
+        width: fit-content;
+        max-width: none;
+        display: inline-grid;
         font-family: "Cormorant Garamond", serif;
         font-size: clamp(2.9rem, 5.8vh, 4.7rem);
         font-weight: 600;
-        line-height: 0.88;
-        letter-spacing: -0.05em;
+        line-height: 0.84;
+        letter-spacing: -0.045em;
+        gap: 0.02em;
+      }
+
+      .heading-line {
+        display: block;
+      }
+
+      .heading-line-center {
+        justify-self: center;
+        text-align: center;
+      }
+
+      .heading-line-last {
+        word-spacing: 0.08em;
       }
 
       .intake-subtitle {
@@ -398,24 +420,35 @@
         justify-content: center;
         min-height: 44px;
         padding: 0 20px;
-        border: 1px solid var(--line);
+        border: 1px solid var(--gold-border);
         border-radius: 999px;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.06));
-        color: var(--text);
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0) 38%),
+          linear-gradient(180deg, var(--gold-top), var(--gold-bottom));
+        color: var(--gold-text);
         font: inherit;
         font-weight: 600;
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.22),
+          inset 0 -1px 0 rgba(64, 42, 13, 0.24);
         cursor: pointer;
         transition:
           transform 220ms ease,
           border-color 220ms ease,
-          background 220ms ease;
+          background 220ms ease,
+          box-shadow 220ms ease;
       }
 
       .button:hover,
       .button:focus-visible {
-        transform: translateY(-2px);
-        border-color: rgba(255, 255, 255, 0.2);
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.08));
+        transform: translateY(-1px);
+        border-color: rgba(203, 179, 130, 0.82);
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0) 38%),
+          linear-gradient(180deg, var(--gold-top-hover), var(--gold-bottom-hover));
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.26),
+          inset 0 -1px 0 rgba(64, 42, 13, 0.22);
       }
 
       .button[disabled] {
@@ -512,6 +545,7 @@
 
         h1 {
           font-size: clamp(2.55rem, 5.2vh, 4rem);
+          gap: 0.015em;
         }
 
         .intake-copy {
@@ -603,7 +637,7 @@
         }
 
         h1 {
-          max-width: 7ch;
+          width: fit-content;
           font-size: clamp(2.9rem, 10vw, 4.3rem);
         }
 
@@ -639,7 +673,7 @@
         }
 
         h1 {
-          max-width: none;
+          width: fit-content;
           font-size: clamp(2.55rem, 15vw, 3.6rem);
         }
 
@@ -704,7 +738,11 @@
         <section class="intake-stage" aria-labelledby="intake-title">
           <div class="intake-copy">
             <p class="eyebrow">Client Intake</p>
-            <h1 id="intake-title">Brief Us in 60 Seconds.</h1>
+            <h1 id="intake-title">
+              <span class="heading-line">Brief Us</span>
+              <span class="heading-line heading-line-center">in</span>
+              <span class="heading-line heading-line-last">60 Seconds.</span>
+            </h1>
             <p class="intake-subtitle">
               Share your product and goals.<br />
               We&rsquo;ll handle the creative direction.
