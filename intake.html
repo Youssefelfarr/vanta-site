@@ -704,9 +704,10 @@
         <section class="intake-stage" aria-labelledby="intake-title">
           <div class="intake-copy">
             <p class="eyebrow">Client Intake</p>
-            <h1 id="intake-title">Send the brief.</h1>
+            <h1 id="intake-title">Brief Us in 60 Seconds.</h1>
             <p class="intake-subtitle">
-              Share the brand, product link, and campaign need. We&rsquo;ll map the direction from there.
+              Share your product and goals.<br />
+              We&rsquo;ll handle the creative direction.
             </p>
             <p class="intake-detail">Brand. Product. Use Case. Budget If Needed.</p>
           </div>
@@ -741,7 +742,7 @@
                     class="input"
                     type="text"
                     name="brand_name"
-                    placeholder="Your brand"
+                    placeholder="e.g. Noir Studio"
                     autocomplete="organization"
                     required
                   />
@@ -753,7 +754,7 @@
                     class="input"
                     type="url"
                     name="product_link"
-                    placeholder="https://"
+                    placeholder="e.g. product page / Instagram link"
                     inputmode="url"
                     required
                   />
@@ -787,16 +788,16 @@
                     class="input"
                     type="text"
                     name="budget"
-                    placeholder="Optional"
+                    placeholder="e.g. 15k–30k EGP (optional)"
                     autocomplete="off"
                   />
                 </label>
               </div>
 
               <div class="submit-row">
-                <button class="button" type="submit" data-submit-button>Submit Intake</button>
+                <button class="button" type="submit" data-submit-button>Start Production</button>
                 <p class="submit-note">
-                  Brand, product, use case, optional budget. Clean, fast, intentional.
+                  No commitment. We&rsquo;ll review and respond within 24h.
                 </p>
               </div>
             </form>
@@ -812,7 +813,7 @@
       const submitButton = document.querySelector("[data-submit-button]");
       const needsInputs = Array.from(document.querySelectorAll('input[name="use_case_option"]'));
       const needsError = document.querySelector("[data-needs-error]");
-      const defaultSubmitLabel = submitButton?.textContent || "Submit Intake";
+      const defaultSubmitLabel = submitButton?.textContent || "Start Production";
 
       const hideSuccessMessage = () => {
         if (successMessage) {
