@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Living - VANTA Campaign Studio</title>
+    <meta
+      name="description"
+      content="Modern Living: furniture visuals produced for luxury interiors, product launches, ads, and social campaigns."
+    />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      .campaign-shell {
+        width: min(calc(100% - 40px), var(--max-width));
+        margin: 0 auto;
+      }
+
+      .js .cv-reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        transition:
+          opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+          transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .js .cv-reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .js .cv-stagger > * {
+        opacity: 0;
+        transform: translateY(14px);
+        transition:
+          opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+          transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .js .cv-stagger.is-visible > *:nth-child(1) { opacity: 1; transform: none; transition-delay: 0ms; }
+      .js .cv-stagger.is-visible > *:nth-child(2) { opacity: 1; transform: none; transition-delay: 110ms; }
+      .js .cv-stagger.is-visible > *:nth-child(3) { opacity: 1; transform: none; transition-delay: 220ms; }
+
+      .cv-section,
+      .cv-grid-section,
+      .cv-cta {
+        padding-top: 0;
+      }
+
+      .cv-section::before,
+      .cv-grid-section::before,
+      .cv-cta::before {
+        content: "";
+        display: block;
+        height: 1px;
+        width: calc(100% - 40px);
+        max-width: 880px;
+        margin: 40px auto 52px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.07) 25%,
+          rgba(255, 255, 255, 0.09) 50%,
+          rgba(255, 255, 255, 0.07) 75%,
+          transparent
+        );
+      }
+
+      .cv-section { padding-bottom: 80px; }
+      .cv-grid-section { padding-bottom: 80px; }
+      .cv-cta {
+        text-align: center;
+        padding-bottom: 100px;
+      }
+
+      .cv-hero {
+        padding: 80px 0 0;
+      }
+
+      .cv-hero-copy {
+        text-align: center;
+        padding-bottom: 60px;
+      }
+
+      .cv-eyebrow {
+        display: inline-block;
+        font-size: 0.7rem;
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+        color: rgba(245, 245, 241, 0.38);
+        margin-bottom: 24px;
+      }
+
+      .cv-title {
+        margin: 0 0 20px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(4rem, 10vw, 8rem);
+        font-weight: 500;
+        letter-spacing: -0.04em;
+        line-height: 0.94;
+        color: var(--text);
+      }
+
+      .cv-subtitle {
+        max-width: 42ch;
+        margin: 0 auto;
+        font-size: clamp(1rem, 1.6vw, 1.15rem);
+        line-height: 1.7;
+        color: var(--muted);
+      }
+
+      .cv-hero-image-wrap {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        border-radius: var(--media-radius) var(--media-radius) 0 0;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: none;
+        box-shadow: 0 -32px 80px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.04);
+      }
+
+      .cv-hero-image-wrap img {
+        display: block;
+        width: 100%;
+        height: 780px;
+        object-fit: cover;
+        object-position: center 32%;
+        will-change: auto;
+        transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .cv-hero-image-wrap:hover img {
+        transform: scale(1.022);
+      }
+
+      .cv-grid-label {
+        font-size: 0.68rem;
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+        color: rgba(245, 245, 241, 0.32);
+        margin: 0 0 28px;
+      }
+
+      .cv-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+
+      .cv-grid-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        background: #0a0a0a;
+        aspect-ratio: 2 / 3;
+      }
+
+      .cv-grid-item img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 24%;
+        will-change: auto;
+        transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .cv-grid-item:hover img {
+        transform: scale(1.032);
+      }
+
+      .cv-concept-inner {
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        gap: 80px;
+        align-items: start;
+      }
+
+      .cv-section-label {
+        font-size: 0.7rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: rgba(245, 245, 241, 0.36);
+        padding-top: 8px;
+        line-height: 1.6;
+      }
+
+      .cv-concept-body {
+        display: grid;
+        gap: 24px;
+        max-width: 60ch;
+      }
+
+      .cv-section-title {
+        margin: 0;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.9rem, 3vw, 2.8rem);
+        font-weight: 500;
+        letter-spacing: -0.025em;
+        line-height: 1.15;
+        color: var(--text);
+      }
+
+      .cv-body-text {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.02rem;
+        line-height: 1.82;
+      }
+
+      .cv-direction-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        overflow: hidden;
+      }
+
+      .cv-direction-card {
+        padding: 44px 38px;
+        background: rgba(255, 255, 255, 0.025);
+        display: grid;
+        gap: 12px;
+        align-content: start;
+        transition: background 300ms ease;
+      }
+
+      .cv-direction-card + .cv-direction-card {
+        border-left: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .cv-direction-card:hover {
+        background: rgba(255, 255, 255, 0.042);
+      }
+
+      .cv-direction-tag {
+        margin: 0;
+        font-size: 0.67rem;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: rgba(245, 245, 241, 0.34);
+      }
+
+      .cv-direction-title {
+        margin: 0;
+        font-size: 1.08rem;
+        font-weight: 600;
+        color: var(--text);
+        line-height: 1.35;
+        letter-spacing: -0.01em;
+      }
+
+      .cv-direction-desc {
+        margin: 0;
+        font-size: 0.93rem;
+        color: var(--muted);
+        line-height: 1.76;
+      }
+
+      .cv-cta-title {
+        margin: 0 auto 16px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.2rem, 5.5vw, 5rem);
+        font-weight: 500;
+        letter-spacing: -0.04em;
+        line-height: 1.05;
+        color: var(--text);
+        max-width: 22ch;
+      }
+
+      .cv-cta-sub {
+        max-width: none;
+        white-space: nowrap;
+        margin: 0 auto 44px;
+        color: var(--muted);
+        font-size: clamp(0.65rem, 2.5vw, 1.05rem);
+        line-height: 1.7;
+      }
+
+      .cv-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 58px;
+        padding: 0 40px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 999px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.04));
+        color: var(--text);
+        font-size: 0.92rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        transition:
+          transform 280ms cubic-bezier(0.22, 1, 0.36, 1),
+          border-color 280ms ease,
+          background 280ms ease,
+          box-shadow 280ms ease;
+      }
+
+      .cv-btn:hover,
+      .cv-btn:focus-visible {
+        transform: translateY(-3px);
+        border-color: rgba(255, 255, 255, 0.3);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.06));
+        box-shadow: 0 20px 54px rgba(0, 0, 0, 0.4), 0 0 36px rgba(214, 209, 196, 0.09);
+        outline: none;
+      }
+
+      .cv-footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+        padding: 32px 0 44px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .cv-footer-brand {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.7rem;
+        letter-spacing: 0.18em;
+        color: var(--text);
+      }
+
+      .cv-footer-note {
+        font-size: 0.76rem;
+        letter-spacing: 0.12em;
+        color: rgba(245, 245, 241, 0.32);
+      }
+
+      @media (max-width: 860px) {
+        .cv-concept-inner {
+          grid-template-columns: 1fr;
+          gap: 28px;
+        }
+
+        .cv-direction-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .cv-direction-card + .cv-direction-card {
+          border-left: none;
+          border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .cv-hero-image-wrap img {
+          height: 560px;
+        }
+
+        .cv-section,
+        .cv-grid-section {
+          padding-bottom: 64px;
+        }
+
+        .cv-cta {
+          padding-bottom: 80px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .cv-hero {
+          padding: 48px 0 0;
+        }
+
+        .cv-hero-copy {
+          padding-bottom: 44px;
+        }
+
+        .cv-title {
+          font-size: clamp(3.2rem, 14vw, 5rem);
+        }
+
+        .cv-hero-image-wrap {
+          border-radius: 16px 16px 0 0;
+          border-bottom: none;
+        }
+
+        .cv-hero-image-wrap img {
+          height: 440px;
+          object-position: center 24%;
+        }
+
+        .cv-grid {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+
+        .cv-grid-item {
+          aspect-ratio: 3 / 2;
+        }
+
+        .cv-direction-card {
+          padding: 36px 28px;
+        }
+
+        .cv-section,
+        .cv-grid-section {
+          padding-bottom: 56px;
+        }
+
+        .cv-cta {
+          padding-bottom: 72px;
+        }
+
+        .cv-footer {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 12px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .js .cv-reveal,
+        .js .cv-stagger > * {
+          opacity: 1 !important;
+          transform: none !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="campaign-shell">
+      <header class="topbar">
+        <a class="brand" href="index.html" aria-label="VANTA home">VANTA</a>
+        <nav class="nav" aria-label="Site navigation">
+          <a href="index.html#build">Services</a>
+          <a href="index.html#campaigns">Campaigns</a>
+          <a href="index.html#why">Philosophy</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="cv-hero" aria-label="Modern Living campaign hero">
+          <div class="cv-hero-copy cv-reveal">
+            <span class="cv-eyebrow">Furniture · Interiors</span>
+            <h1 class="cv-title">Modern Living</h1>
+            <p class="cv-subtitle">
+              Furniture visuals produced for luxury interiors, product launches, ads, and social media campaigns.
+            </p>
+          </div>
+          <div class="cv-hero-image-wrap" aria-hidden="true">
+            <img
+              src="/images/furniture/furniture-hero.webp"
+              alt="Modern Living furniture campaign hero visual"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </div>
+        </section>
+
+        <section class="cv-grid-section" aria-label="Campaign visuals">
+          <div>
+            <p class="cv-grid-label cv-reveal">Visual Selection</p>
+            <div class="cv-grid cv-stagger">
+              <div class="cv-grid-item">
+                <img src="/images/furniture/furniture-lifestyle.webp" alt="Modern Living furniture lifestyle visual" loading="lazy" decoding="async" />
+              </div>
+              <div class="cv-grid-item">
+                <img src="/images/furniture/furniture-detail.webp" alt="Modern Living furniture detail visual" loading="lazy" decoding="async" />
+              </div>
+              <div class="cv-grid-item">
+                <img src="/images/furniture/furniture-room.webp" alt="Modern Living furniture room styling visual" loading="lazy" decoding="async" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="cv-section" aria-label="Concept">
+          <div class="cv-concept-inner cv-reveal">
+            <p class="cv-section-label">Concept</p>
+            <div class="cv-concept-body">
+              <h2 class="cv-section-title">A furniture campaign should feel like a world, not a catalog.</h2>
+              <p class="cv-body-text">
+                Modern Living is framed around premium interior storytelling. The visual direction is built to make each piece feel architectural, tactile, and immediately at home inside a luxury environment.
+              </p>
+              <p class="cv-body-text">
+                We treat furniture as part object, part atmosphere. That means launch visuals that can work across product pages, paid campaigns, social rollout, and brand storytelling without losing polish.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="cv-section" aria-label="Creative direction">
+          <p class="cv-section-label cv-reveal" style="margin-bottom: 48px;">Direction</p>
+          <div class="cv-direction-grid cv-stagger">
+            <div class="cv-direction-card">
+              <p class="cv-direction-tag">Lighting</p>
+              <h3 class="cv-direction-title">Soft architectural light with sculpted contrast.</h3>
+              <p class="cv-direction-desc">A restrained lighting setup that lets silhouettes, finishes, and material texture carry the frame without visual noise.</p>
+            </div>
+            <div class="cv-direction-card">
+              <p class="cv-direction-tag">Styling</p>
+              <h3 class="cv-direction-title">Luxury interiors, balanced negative space, premium restraint.</h3>
+              <p class="cv-direction-desc">Compositions built around calm palettes, modern surfaces, and editorial room styling that keeps the furniture unmistakably central.</p>
+            </div>
+            <div class="cv-direction-card">
+              <p class="cv-direction-tag">Mood</p>
+              <h3 class="cv-direction-title">Quiet confidence for launches, ads, and social.</h3>
+              <p class="cv-direction-desc">The campaign language is polished and contemporary, designed to position the collection as desirable before a single feature list is read.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="cv-cta cv-reveal" id="contact" aria-label="Start your campaign">
+          <p class="cv-eyebrow" style="margin-bottom: 22px;">Start with VANTA</p>
+          <h2 class="cv-cta-title">Bring your furniture line into campaign form.</h2>
+          <p class="cv-cta-sub">Luxury visual direction for launches, paid media, and social rollout.</p>
+          <a class="cv-btn" href="intake.html">Open the intake</a>
+        </section>
+      </main>
+
+      <footer class="cv-footer" role="contentinfo">
+        <a class="cv-footer-brand" href="index.html" aria-label="VANTA home">VANTA</a>
+        <span class="cv-footer-note">AI Creative Campaign Studio &middot; &copy; 2026 VANTA</span>
+      </footer>
+    </div>
+
+    <script>
+      (function () {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add("is-visible");
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.07, rootMargin: "0px 0px -40px 0px" });
+
+        document.querySelectorAll(".cv-reveal, .cv-stagger").forEach(function (el) {
+          io.observe(el);
+        });
+      })();
+    </script>
+  </body>
+</html>
